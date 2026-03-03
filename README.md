@@ -23,6 +23,7 @@ This is a full-stack web application that allows users to browse movies, search 
 <b>Dependencies:</b> cors, mysql2, express
 
 <h1>🛣️ API Endpoints</h1>
+
 | **Method** | **Endpoint**        | **Description**             |
 | ---------- | ------------------- | --------------------------- |
 | POST       | /register           | Create a new user account   |
