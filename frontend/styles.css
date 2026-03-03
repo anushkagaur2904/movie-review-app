@@ -1,0 +1,394 @@
+/* Import Google Fonts - Poppins for general text, and a display font if desired */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ---------- GLOBAL LAYOUT ---------- */
+body {
+  font-family: "Poppins", sans-serif;
+  /* A more sophisticated gradient for the background */
+  background: linear-gradient(145deg, #e0eafc 0%, #fcfcfc 100%);
+  margin: 0;
+  padding: 40px 25px; /* Slightly more padding for a softer look */
+  color: #333d47; /* Darker, softer text color */
+  line-height: 1.6;
+  min-height: 100vh; /* Ensure full height background */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif; /* A stronger, more elegant font for headings */
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.8em; /* Larger, more impactful heading */
+  font-weight: 700;
+  color: #5b21b6; /* A richer, deep violet */
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.08); /* Subtle text shadow */
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #5b21b6;
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(99, 102, 241, 0.2); /* Subtle underline */
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #6366f1;
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* ---------- CARD STYLE (REUSABLE) ---------- */
+section {
+  background: rgba(255, 255, 255, 0.95); /* More opaque, but still a hint of transparency */
+  backdrop-filter: blur(12px); /* Stronger blur for a premium feel */
+  padding: 30px; /* More generous padding */
+  margin-bottom: 25px;
+  border-radius: 20px; /* Slightly more rounded */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Deeper, softer shadow */
+  border: 1px solid rgba(255, 255, 255, 0.7); /* Lighter border */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  max-width: 800px; /* Limit card width for better readability */
+  width: 100%;
+}
+
+section:hover {
+  transform: translateY(-5px); /* Gentle lift on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* ---------- INPUTS ---------- */
+input {
+  padding: 14px; /* More comfortable padding */
+  margin: 10px 0;
+  width: calc(100% - 28px); /* Adjust width for padding */
+  max-width: 300px; /* Max width for consistency */
+  border-radius: 12px; /* Softer rounded corners */
+  border: 1.5px solid #d1d5db; /* Lighter border color */
+  font-size: 16px;
+  color: #333d47;
+  transition: all 0.3s ease; /* Smooth transition */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+}
+
+input::placeholder {
+  color: #9ca3af; /* Lighter placeholder text */
+}
+
+input:focus {
+  border-color: #6366f1; /* Bright blue focus */
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3), inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Ring focus effect */
+  outline: none;
+  background-color: #f9fafb; /* Light background on focus */
+}
+
+/* ---------- BUTTONS ---------- */
+button {
+  padding: 14px 25px;
+  background: linear-gradient(45deg, #6366f1, #9333ea); /* Gradient button */
+  border: none;
+  color: white;
+  border-radius: 12px; /* Match input border-radius */
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3); /* Button shadow */
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #9333ea, #6366f1); /* Reverse gradient on hover */
+  transform: translateY(-3px); /* More pronounced lift */
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4); /* Enhanced shadow */
+}
+
+button:active {
+  transform: scale(0.96) translateY(-1px); /* More responsive active state */
+  box-shadow: 0 3px 10px rgba(99, 102, 241, 0.2);
+}
+
+/* ---------- SEARCH BAR ---------- */
+#search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically align items */
+  gap: 15px; /* Increased gap */
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+#search-input {
+  width: 100%;
+  max-width: 350px; /* Slightly wider search input */
+  margin: 0; /* Remove default margin */
+}
+
+#search-section button {
+  margin: 0; /* Remove default margin */
+}
+
+/* ---------- MOVIE LIST ---------- */
+#movies-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid; /* Use grid for a more structured list */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 15px; /* Gap between grid items */
+}
+
+#movies-list li {
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 16px; /* Slightly more rounded */
+  border: 1px solid #e5e7eb; /* Lighter border */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #4a5568;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow for list items */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out title and potentially a small icon */
+}
+
+#movies-list li:hover {
+  background: #f0f4ff; /* Lighter, more inviting hover */
+  transform: translateY(-4px) scale(1.01); /* More pronounced lift and slight scale */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: #5b21b6; /* Highlight text on hover */
+}
+
+/* Add Movie Form - Specific adjustments for alignment */
+#add-movie-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#add-movie-section input {
+  max-width: 400px;
+  width: 100%;
+}
+
+#add-movie-section button {
+  margin-top: 15px;
+  width: auto; /* Let button size itself */
+  min-width: 150px;
+}
+
+
+/* ---------- MOVIE DETAILS SECTION ---------- */
+#details-section {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 35px; /* More padding */
+  border: 1px solid #e5e7eb;
+}
+
+#movie-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #3730a3; /* Darker, more prominent title */
+  margin-bottom: 15px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#movie-description {
+  font-size: 1.1em;
+  margin: 15px 0 25px;
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+#avg-rating {
+  font-weight: 700;
+  font-size: 1.6em;
+  color: #6366f1; /* Bright accent color */
+  background: #e0e7ff; /* Light background for rating */
+  padding: 8px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Reviews and Ratings inputs */
+#details-section input {
+  max-width: 300px;
+  width: 100%;
+}
+
+#details-section button {
+  margin-left: 10px;
+  margin-top: 10px; /* Adjust spacing */
+}
+
+
+/* ---------- REVIEWS LIST ---------- */
+#reviews-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#reviews-list li {
+  background: #f8fafc; /* Very light background for reviews */
+  margin-bottom: 12px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0; /* Softer border */
+  font-size: 0.95em;
+  color: #4a5568;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03); /* Very subtle shadow */
+  transition: all 0.2s ease;
+}
+
+#reviews-list li:hover {
+  background: #eff6ff; /* Slightly brighter on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Review and Rating form styling */
+#details-section .review-input-group,
+#details-section .rating-input-group {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#details-section .review-input-group input,
+#details-section .rating-input-group input {
+  flex-grow: 1; /* Allow inputs to grow */
+  margin: 0; /* Remove default input margins */
+}
+
+/* Adjust button spacing within review/rating forms */
+#details-section .review-input-group button,
+#details-section .rating-input-group button {
+  flex-shrink: 0; /* Prevent button from shrinking */
+  margin: 0; /* Remove default button margins */
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #search-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #search-input {
+    max-width: 100%;
+  }
+
+  #movies-list {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+
+  #movie-title {
+    font-size: 1.8em;
+  }
+
+  #avg-rating {
+    font-size: 1.4em;
+    padding: 6px 12px;
+  }
+
+  #details-section .review-input-group,
+  #details-section .rating-input-group {
+    flex-direction: column;
+    align-items: stretch; /* Stretch items to full width */
+  }
+
+  #details-section .review-input-group button,
+  #details-section .rating-input-group button {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+
+  section {
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  input {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  button {
+    padding: 12px 18px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+
+  #movies-list li {
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  #movie-title {
+    font-size: 1.6em;
+  }
+  #movie-description {
+    font-size: 0.95em;
+  }
+  #reviews-list li {
+    font-size: 0.9em;
+    padding: 15px;
+  }
+}

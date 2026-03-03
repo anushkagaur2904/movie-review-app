@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Review App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Movie Review Application</h1>
+
+    <!-- ✅ REGISTER -->
+    <section id="register-section">
+        <h2>Create Account</h2>
+        <input id="reg-name" placeholder="Full Name">
+        <input id="reg-email" placeholder="Email">
+        <input id="reg-password" placeholder="Password">
+        <button id="registerBtn">Register</button>
+    </section>
+
+    <p id="register-status"></p>
+
+    <!-- ✅ LOGIN -->
+    <section id="login-section">
+        <h2>Login</h2>
+        <input id="login-email" placeholder="Email">
+        <input id="login-password" placeholder="Password">
+        <button id="loginBtn">Login</button>
+    </section>
+
+    <p id="login-status"></p>
+
+    <!-- ✅ SEARCH -->
+    <section id="search-section">
+        <input id="search-input" placeholder="Search movies...">
+        <button id="searchBtn">Search</button>
+    </section>
+
+    <!-- ✅ MOVIE LIST -->
+    <section id="movies-section">
+        <h2>All Movies</h2>
+        <ul id="movies-list"></ul>
+    </section>
+
+    <!-- ✅ ADD MOVIE -->
+    <section id="add-movie-section">
+        <h2>Add Movie</h2>
+        <input id="title" placeholder="Movie Title">
+        <input id="year" placeholder="Release Year">
+        <input id="description" placeholder="Description">
+        <button id="addMovieBtn">Add Movie</button>
+    </section>
+
+    <!-- ✅ MOVIE DETAILS -->
+    <section id="details-section" style="display:none;">
+        <h2 id="movie-title"></h2>
+        <p id="movie-description"></p>
+
+        <p><strong>Average Rating:</strong> <span id="avg-rating"></span></p>
+
+        <h3>Reviews</h3>
+        <ul id="reviews-list"></ul>
+
+        <h3>Add Review</h3>
+        <input id="review-comment" placeholder="Write review">
+        <button id="addReviewBtn">Submit Review</button>
+
+        <h3>Add Rating</h3>
+        <input id="rating-value" placeholder="Rating (1-5)">
+        <button id="addRatingBtn">Submit Rating</button>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
